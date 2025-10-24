@@ -1,0 +1,124 @@
+/* General background */
+body {
+  /* background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); */
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Chat container */
+.chat-wrapper {
+    width: 400px;
+    height: 85vh;
+    background: #1e1f267d;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* Header */
+.chat-header {
+  padding: 15px;
+  text-align: center;
+  background: #26293a99;
+  border-bottom: 1px solid #333;
+}
+
+.chat-header h2 {
+  margin: 0;
+  font-weight: 600;
+  color: #00c4ff;
+}
+
+/* Chat body */
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Scrollbar */
+.chat-body::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-body::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+}
+
+/* Message bubbles */
+.chat-bubble:first-child{margin-top: 0px;}
+.chat-bubble {
+  max-width: 75%;
+  padding: 5px 16px;
+  border-radius: 18px;
+  margin-top: 5px;
+  font-size: 15px;
+  line-height: 1.4;
+  position: relative;
+  animation: fadeIn 0.2s ease-in;
+}
+
+.chat-bubble.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #0072ff, #00c6ff);
+  border-bottom-right-radius: 0px;
+}
+
+.chat-bubble.bot {
+  align-self: flex-start;
+  background: #2f313d;
+  border-bottom-left-radius: 0px;
+}
+
+/* Input area */
+.chat-footer {
+      display: flex;
+    padding: 10px 15px;
+    background: #44496a;
+    border-top: 1px solid #333;
+}
+
+.chat-footer input {
+  flex: 1;
+  /* background: #1e1f26; */
+  border: none;
+  outline: none;
+  /* color: white; */
+  padding: 10px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+.chat-footer button {
+  background: #00c4ff;
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  color: white;
+  font-size: 18px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  padding: 4px;
+}
+
+.chat-footer button:hover {
+  background: #00a3d7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
